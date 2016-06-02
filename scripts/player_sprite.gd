@@ -5,7 +5,6 @@ var camera
 
 func _ready():
 	camera = get_node("/root/main/Camera")
-	print(camera.get_name())
 	
 	set_process(true)
 
