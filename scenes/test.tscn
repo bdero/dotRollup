@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://images/large_primary.png" type="Texture" id=2]
 [ext_resource path="res://scripts/player_sprite.gd" type="Script" id=3]
 [ext_resource path="res://scripts/camera.gd" type="Script" id=4]
+[ext_resource path="res://scripts/spotlight.gd" type="Script" id=5]
 
 [sub_resource type="SphereShape" id=4]
 
@@ -56,7 +57,7 @@ ambient_light/enabled = true
 ambient_light/color = Color( 1, 1, 1, 1 )
 ambient_light/energy = 1.0
 fxaa/enabled = false
-background/mode = 1
+background/mode = 2
 background/color = Color( 0, 0, 0, 1 )
 background/energy = 1.0
 background/scale = 1.0
@@ -132,7 +133,7 @@ transform/local = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0
 layers = 1
 geometry/visible = true
 geometry/material_override = null
-geometry/cast_shadow = 1
+geometry/cast_shadow = 2
 geometry/receive_shadows = true
 geometry/range_begin = 0.0
 geometry/range_end = 0.0
@@ -231,5 +232,55 @@ environment = null
 h_offset = 0.0
 v_offset = 0.0
 script/script = ExtResource( 4 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 0.635051, 3.37657e-08, -0.77247, 0.77247, -2.7759e-08, 0.635051, 0, -1, -4.37114e-08, -15.0019, 9.18746, 0 )
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 0
+params/energy = 2.2
+colors/diffuse = Color( 0.978487, 0.230713, 0.984375, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = true
+shadow/darkening = 0.0
+shadow/z_offset = 0.05
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+params/radius = 100.0
+params/attenuation = 0.378929
+params/spot_angle = 18.6227
+params/spot_attenuation = 147.034
+script/script = ExtResource( 5 )
+
+[node name="SpotLight1" type="SpotLight" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 0.659132, -3.28722e-08, 0.752027, -0.752027, -2.88116e-08, 0.659132, 0, -1, -4.37114e-08, 15.0019, 9.18746, 0 )
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 0
+params/energy = 2.2
+colors/diffuse = Color( 1, 0.632812, 0, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = true
+shadow/darkening = 0.0
+shadow/z_offset = 0.05
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+params/radius = 100.0
+params/attenuation = 0.637281
+params/spot_angle = 18.6227
+params/spot_attenuation = 51.9839
+script/script = ExtResource( 5 )
 
 
