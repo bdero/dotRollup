@@ -3,49 +3,13 @@
 [ext_resource path="res://scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://images/large_primary.png" type="Texture" id=2]
 [ext_resource path="res://scripts/player_sprite.gd" type="Script" id=3]
-[ext_resource path="res://scripts/camera.gd" type="Script" id=4]
-[ext_resource path="res://scripts/spotlight.gd" type="Script" id=5]
+[ext_resource path="res://materials/blue_gray.tres" type="Material" id=4]
+[ext_resource path="res://scripts/camera.gd" type="Script" id=5]
+[ext_resource path="res://scripts/spotlight.gd" type="Script" id=6]
 
 [sub_resource type="SphereShape" id=4]
 
 radius = 2.5
-
-[sub_resource type="FixedMaterial" id=3]
-
-flags/visible = true
-flags/double_sided = false
-flags/invert_faces = false
-flags/unshaded = false
-flags/on_top = false
-flags/lightmap_on_uv2 = true
-flags/colarray_is_srgb = true
-params/blend_mode = 0
-params/depth_draw = 1
-params/line_width = 0.0
-fixed_flags/use_alpha = false
-fixed_flags/use_color_array = false
-fixed_flags/use_point_size = false
-fixed_flags/discard_alpha = false
-fixed_flags/use_xy_normalmap = false
-params/diffuse = Color( 0.191238, 0.265001, 0.324219, 1 )
-params/specular = Color( 0, 0, 0, 1 )
-params/emission = Color( 0, 0, 0, 1 )
-params/specular_exp = 40
-params/detail_mix = 1.0
-params/normal_depth = 1
-params/shader = 0
-params/shader_param = 0.5
-params/glow = 0
-params/point_size = 1.0
-uv_xform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-textures/diffuse_tc = 0
-textures/detail_tc = 0
-textures/specular_tc = 0
-textures/emission_tc = 0
-textures/specular_exp_tc = 0
-textures/glow_tc = 0
-textures/normal_tc = 0
-textures/shade_param_tc = 0
 
 [sub_resource type="BoxShape" id=1]
 
@@ -176,7 +140,7 @@ _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 14.1109, 0, 0, 0, 14.1109, 0, 0, 0, 14.1109, 0, -17, 0 )
 layers = 1
 geometry/visible = true
-geometry/material_override = SubResource( 3 )
+geometry/material_override = ExtResource( 4 )
 geometry/cast_shadow = 1
 geometry/receive_shadows = true
 geometry/range_begin = 0.0
@@ -231,7 +195,7 @@ visible_layers = 1048575
 environment = null
 h_offset = 0.0
 v_offset = 0.0
-script/script = ExtResource( 4 )
+script/script = ExtResource( 5 )
 
 [node name="SpotLight" type="SpotLight" parent="."]
 
@@ -256,7 +220,7 @@ params/radius = 100.0
 params/attenuation = 0.378929
 params/spot_angle = 18.6227
 params/spot_attenuation = 147.034
-script/script = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
 [node name="SpotLight1" type="SpotLight" parent="."]
 
@@ -281,6 +245,6 @@ params/radius = 100.0
 params/attenuation = 0.637281
 params/spot_angle = 18.6227
 params/spot_attenuation = 51.9839
-script/script = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
 
